@@ -1,0 +1,296 @@
+mysql -h 10.5.18.68 -u 13CS10039 -p
+password : cse12
+
+use 13CS10039;
+show tables;
+
+create table actor
+( Actor_ID int(10) primary key, 
+  First_name varchar(200) not null, 
+  Last_name varchar(200), 
+  Date_of_birth date
+);
+
+create table director
+( Director_ID int(10) primary key, 
+  First_name varchar(200) not null,
+  Last_name varchar(200), 
+  Date_of_birth date
+);
+
+create table movie
+( Movie_ID int(10) primary key,
+  Title varchar(200) not null,	
+  Year year not null,
+  Genre varchar(30)
+);
+
+create table acts
+(
+ Actor_ID int(10) not null,
+ Movie_ID int(10) not null
+);
+
+create table directs
+(
+	Director_ID int(10) not null,
+	Movie_ID int(10) not null
+);
+
+INSERT INTO actor VALUES(0,"Amitabh","Bacchan","1942-10-11");
+
+INSERT INTO actor VALUES(1,"Aamir","Khan","1965-03-14");
+
+INSERT INTO actor VALUES(2,"Abhay","Deol","1976-03-15");
+
+INSERT INTO actor VALUES(3,"Akshay","Kumar","1967-09-09");
+
+INSERT INTO actor VALUES(4,"Shahrukh","Khan","1965-11-02");
+
+INSERT INTO actor VALUES(5,"Aishwarya","Rai","1973-11-01");
+
+INSERT INTO actor VALUES(6,"Bipasha","Basu","1979-01-07");
+
+INSERT INTO actor VALUES(7,"Deepika","Padukone","1986-01-05");
+
+INSERT INTO actor VALUES(8,"Katrina","Kaif","1984-07-16");
+
+INSERT INTO actor VALUES(9,"Priyanka","Chopra","1982-07-18");
+
+INSERT INTO actor VALUES(10,"Anushka","Sharma","1988-05-01");
+
+INSERT INTO actor VALUES(11,"Salman","Khan","1965-12-27");
+
+INSERT INTO actor VALUES(12,"Ajay","Devgn","1969-04-02");
+
+
+INSERT INTO director VALUES(0,"Aaditya","Chopra","1971-05-21");
+
+INSERT INTO director VALUES(1,"Farah","Khan","1970-09-18");
+
+INSERT INTO director VALUES(2,"Karan","Johar","1965-09-28");
+
+INSERT INTO director VALUES(3,"Ram Gopal","Verma","1957-01-02");
+
+INSERT INTO director VALUES(4,"Yash","Chopra","1929-06-12");
+
+INSERT INTO director VALUES(5,"Sanjay Leela","Bansali","1955-11-08");
+
+
+INSERT INTO director VALUES(6,"Rohit","Shetty","1974-03-14");
+
+
+INSERT INTO director VALUES(7,"Shahrukh","Khan","1965-11-02");
+
+select * from actor;
+
+select * from director;
+
+INSERT INTO movie VALUES(0,"Happy New Year","2014","Comdey");
+
+INSERT INTO movie VALUES(1,"Om Shanti Om","2007","Drama/Romance");
+
+INSERT INTO movie VALUES(2,"Main Hoon Na","2004","Action/Comedy");
+
+INSERT INTO movie VALUES(3,"Rab Ne Bana Di Jodi","2008","Romance");
+
+INSERT INTO movie VALUES(4,"Mohabbatein","2000","Romance");
+
+INSERT INTO movie VALUES(5,"Dilwale Dulhaniya Le Jayenge","1995","Romance");
+
+INSERT INTO movie VALUES(6,"Kabhi Alvida Na kehna","2006","Drama");
+
+INSERT INTO movie VALUES(7,"Kabhi Khushi Kabhi Gam","2001","Drama");
+
+INSERT INTO movie VALUES(8,"Kuch Kuch Hota Hai","1998","Drama/Romance");
+
+INSERT INTO movie VALUES(9,"My Name Is Khan","2010","Drama");
+
+INSERT INTO movie VALUES(10,"Aag","2007","Comedy");
+
+INSERT INTO movie VALUES(11,"Nishabd","2007","Romance");
+
+INSERT INTO movie VALUES(12,"Sarkar","2005","Drama");
+
+INSERT INTO movie VALUES(13,"Jab Tak Hai Jaan","2012","Romance");
+
+INSERT INTO movie VALUES(14,"Veer Zaara","2004","Crime");
+
+INSERT INTO movie VALUES(15,"Dil To Pagal Hai","1997","Romance");
+
+INSERT INTO movie VALUES(16,"Bajirao Mastani","2015","Period");
+
+INSERT INTO movie VALUES(17,"Tamasha","2015","Drama");
+
+
+
+INSERT INTO movie VALUES(18,"Wanted","2009","Action/Comedy");
+
+INSERT INTO movie VALUES(19,"Dabangg","2010","Action/Comedy");
+
+INSERT INTO movie VALUES(20,"Bajrangi Bhaijaan","2015","Comedy/Drama");
+
+INSERT INTO movie VALUES(21,"Singham","2011","Action/Drama");
+
+
+
+
+INSERT INTO acts VALUES(4,0); 
+
+INSERT INTO acts VALUES(7,0);
+
+INSERT INTO acts VALUES(4,1);
+
+INSERT INTO acts VALUES(7,1);
+
+INSERT INTO acts VALUES(4,2);
+
+INSERT INTO acts VALUES(4,3);
+
+INSERT INTO acts VALUES(10,3); 
+
+INSERT INTO acts VALUES(4,4); 
+
+INSERT INTO acts VALUES(5,4); 
+
+INSERT INTO acts VALUES(4,5); 
+
+INSERT INTO acts VALUES(4,6); 
+
+INSERT INTO acts VALUES(0,7); 
+
+INSERT INTO acts VALUES(4,7);
+
+INSERT INTO acts VALUES(4,8);
+
+INSERT INTO acts VALUES(4,9);
+
+INSERT INTO acts VALUES(0,10);
+
+INSERT INTO acts VALUES(0,11);
+
+INSERT INTO acts VALUES(0,12);
+
+INSERT INTO acts VALUES(4,13);
+
+INSERT INTO acts VALUES(8,13);
+
+INSERT INTO acts VALUES(10,13);
+
+INSERT INTO acts VALUES(4,14);
+
+INSERT INTO acts VALUES(4,15);
+
+INSERT INTO acts VALUES(7,16);
+
+INSERT INTO acts VALUES(7,17);
+
+INSERT INTO acts VALUES(11,18);
+
+INSERT INTO acts VALUES(11,19);
+
+INSERT INTO acts VALUES(11,20);
+
+INSERT INTO acts VALUES(12,21);
+
+
+
+INSERT INTO directs VALUES(7,0);
+
+INSERT INTO directs VALUES(7,1);
+
+INSERT INTO directs VALUES(1,2);
+
+INSERT INTO directs VALUES(0,3);
+
+INSERT INTO directs VALUES(0,4);
+
+INSERT INTO directs VALUES(0,5);
+
+INSERT INTO directs VALUES(2,6);
+
+INSERT INTO directs VALUES(2,7);
+
+INSERT INTO directs VALUES(2,8);
+
+INSERT INTO directs VALUES(2,9);
+
+INSERT INTO directs VALUES(3,10);
+
+INSERT INTO directs VALUES(3,11);
+
+INSERT INTO directs VALUES(3,12);
+
+INSERT INTO directs VALUES(4,13);
+
+INSERT INTO directs VALUES(4,14);
+
+INSERT INTO directs VALUES(4,15);
+
+INSERT INTO directs VALUES(5,16);
+
+INSERT INTO directs VALUES(6,17);
+
+INSERT INTO directs VALUES(7,18);
+
+INSERT INTO directs VALUES(7,19);
+
+INSERT INTO directs VALUES(6,20);
+
+INSERT INTO directs VALUES(6,21);
+
+
+
+
+update movie 
+set Genre  = "Romance/Thriller" where Movie_ID = 15;
+
+
+// Part 1
+select Title from movie,acts where 
+movie.Movie_ID = acts.movie_ID and 
+Actor_ID = (Select Actor_ID from actor where First_name = "Shahrukh" and Last_name = "Khan");
+
+// Part 2
+
+select Title from movie,acts,directs where 
+movie.Movie_ID = acts.movie_ID and 
+movie.Movie_ID = directs.Movie_ID and 
+Actor_ID = (Select Actor_ID from actor where First_name = "Shahrukh" and Last_name = "Khan") and 
+Director_ID = (select Director_ID from director where First_name = "Shahrukh" and Last_name="Khan");
+
+// Part 3
+
+select Title from movie,acts where year >= 2000 and 
+Genre like 
+"%Thriller%" and 
+movie.Movie_ID = acts.Movie_ID and 
+Actor_ID = (select Actor_ID from actor where First_name = "Shahrukh" and Last_name = "Khan");
+
+// Part 4
+
+Select Concat(First_name,Concat(" ",Last_name)) "NAME" from actor where
+Actor_ID in 
+(Select Actor_ID from acts where acts.Movie_ID in 
+  (select Movie_ID from acts where Actor_ID = 
+    (select Actor_ID from actor where First_name = "Shahrukh" and Last_name = "Khan")
+  ) and 
+Actor_ID != (select Actor_ID from actor where First_name = "Shahrukh" and Last_name = "Khan")
+) and 
+datediff(Date_of_birth,(select Date_of_birth from actor where First_name= "Shahrukh" and Last_name = "Khan") )>=3650;
+
+// Part 5
+
+Select Concat (First_name,Concat(" ",Last_name)) "DIRECTOR NAME" from director where 
+Director_ID =
+( 
+ Select Director_ID from directs where directs.Movie_ID in 
+  (Select Movie_ID from acts where Actor_ID = 
+    (Select Actor_ID from actor where First_name = "Shahrukh" and   
+     Last_name = "Khan"
+    )
+  ) 
+  group by Director_ID 
+  order by Count(Director_ID) desc 
+  limit 1
+);
